@@ -1,0 +1,1618 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohit Kumar Gupta | Senior Full Stack Developer</title>
+    <meta name="description"
+        content="Mohit Kumar Gupta is a Senior Full Stack Developer with 3+ years of experience building scalable web applications using MERN Stack, Laravel, and modern frontend technologies." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-soft: #111c34;
+            --panel: rgba(15, 23, 42, 0.75);
+            --panel-solid: #13203a;
+            --card: rgba(255, 255, 255, 0.04);
+            --text: #e5eefc;
+            --muted: #97a7c3;
+            --line: rgba(148, 163, 184, 0.18);
+            --accent: #60a5fa;
+            --accent-2: #22c55e;
+            --white: #ffffff;
+            --shadow: 0 20px 60px rgba(2, 8, 23, 0.4);
+            --radius: 22px;
+            --radius-sm: 14px;
+            --max: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at top left,
+                    rgba(96, 165, 250, 0.14),
+                    transparent 32%),
+                radial-gradient(circle at top right,
+                    rgba(34, 197, 94, 0.08),
+                    transparent 24%),
+                linear-gradient(180deg, #0b1223 0%, #0f172a 100%);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 34px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        .section-title {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            margin-bottom: 14px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-desc {
+            color: var(--muted);
+            max-width: 760px;
+            font-size: 1.03rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(16px);
+            background: rgba(11, 18, 35, 0.72);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 74px;
+            gap: 16px;
+        }
+
+        .brand {
+            font-family: "Manrope", sans-serif;
+            font-weight: 800;
+            font-size: 1.12rem;
+            letter-spacing: -0.02em;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 0.96rem;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 18px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: 0.25s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #7dd3fc);
+            color: #08111f;
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.22);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--line);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(148, 163, 184, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 90px 0 60px;
+        }
+
+        .hero-wrap {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 34px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(34, 197, 94, 0.08);
+            color: #9ae6b4;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .hero-badge .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-2);
+            box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 .soft {
+            color: #a8c7f5;
+            font-weight: 700;
+        }
+
+        .hero-role {
+            font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+            color: #c2d5f4;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .hero-desc {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.06rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .meta-pill {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
+            color: #cfe0fb;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.06),
+                    rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: auto -40px -40px auto;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    rgba(96, 165, 250, 0.18),
+                    transparent 70%);
+        }
+
+        .profile-mini {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--accent), #1d4ed8);
+            display: grid;
+            place-items: center;
+            color: white;
+            font-family: "Manrope", sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -0.04em;
+        }
+
+        .profile-mini h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .profile-mini p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .quick-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+        }
+
+        .quick-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.86rem;
+            margin-bottom: 8px;
+        }
+
+        .quick-item strong {
+            font-size: 1.12rem;
+            color: var(--white);
+            display: block;
+            line-height: 1.4;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 26px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 24px;
+            margin-top: 38px;
+        }
+
+        .about-copy p+p {
+            margin-top: 16px;
+        }
+
+        .about-copy p {
+            color: #c9d7ec;
+            font-size: 1.03rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .stat {
+            border-radius: 18px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--line);
+        }
+
+        .stat .num {
+            font-family: "Manrope", sans-serif;
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .stat .label {
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 38px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 14px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 9px 12px;
+            border-radius: 999px;
+            background: rgba(96, 165, 250, 0.08);
+            border: 1px solid rgba(96, 165, 250, 0.18);
+            color: #d7e8ff;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Experience */
+        .timeline {
+            margin-top: 40px;
+            display: grid;
+            gap: 24px;
+        }
+
+        .role-card {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .role-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.12);
+        }
+
+        .role-card::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 24px;
+            bottom: -24px;
+            width: 2px;
+            background: rgba(96, 165, 250, 0.18);
+        }
+
+        .role-card:last-child::after {
+            display: none;
+        }
+
+        .role-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .role-head h3 {
+            font-size: 1.24rem;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .role-company {
+            color: #b7c9e8;
+            font-weight: 600;
+        }
+
+        .role-time {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .project-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+        }
+
+        .project-item h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .project-item p {
+            color: #cad7ea;
+            font-size: 0.97rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 38px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .project-top {
+            position: relative;
+            padding: 24px 24px 18px;
+            border-bottom: 1px solid var(--line);
+            background:
+                radial-gradient(circle at top right, rgba(96, 165, 250, 0.14), transparent 38%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+        }
+
+        .project-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.18);
+            color: #d8eaff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            margin-bottom: 14px;
+        }
+
+        .project-title-row {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .project-title-row h3 {
+            font-size: 1.18rem;
+            line-height: 1.3;
+        }
+
+        .project-status {
+            flex-shrink: 0;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.18);
+            color: #baf3c8;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .project-desc {
+            color: #c7d6eb;
+            font-size: 0.97rem;
+        }
+
+        .project-body {
+            padding: 22px 24px 24px;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .project-meta-item {
+            padding: 14px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--line);
+        }
+
+        .project-meta-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
+
+        .project-meta-item strong {
+            color: var(--white);
+            font-size: 0.93rem;
+            line-height: 1.4;
+        }
+
+        .project-points {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .project-point {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            color: #cfddf1;
+            font-size: 0.94rem;
+        }
+
+        .project-point::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-top: 8px;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.12);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .project-tag {
+            padding: 8px 11px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
+            color: #d9e7fb;
+            font-size: 0.84rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: 0.25s ease;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .project-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(148, 163, 184, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .project-link.primary {
+            background: linear-gradient(135deg, var(--accent), #7dd3fc);
+            color: #08111f;
+            border-color: transparent;
+        }
+
+        .project-link.primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .projects-note {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        @media (max-width: 1100px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .project-title-row {
+                flex-direction: column;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-link {
+                width: 100%;
+            }
+        }
+
+        /* Impact */
+        .impact-grid {
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 38px;
+        }
+
+        .impact-card {
+            text-align: left;
+        }
+
+        .impact-card .big {
+            font-family: "Manrope", sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .impact-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* Education + contact */
+        .two-col {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 24px;
+            margin-top: 38px;
+        }
+
+        .edu-list,
+        .contact-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .edu-item,
+        .contact-item {
+            padding: 18px;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .edu-item h4,
+        .contact-item h4 {
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .edu-item p,
+        .contact-item p,
+        .contact-item a {
+            color: var(--muted);
+        }
+
+        .contact-cta {
+            margin-top: 18px;
+            color: #c7d7ef;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 30px 0 50px;
+            color: var(--muted);
+            font-size: 0.94rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+        }
+
+        /* Mobile nav */
+        .menu-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--text);
+            padding: 10px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1100px) {
+
+            .skills-grid,
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-wrap,
+            .about-grid,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 860px) {
+
+            .nav-links,
+            .nav-actions .btn-secondary {
+                display: none;
+            }
+
+            .menu-btn {
+                display: inline-flex;
+            }
+
+            .nav-links.open {
+                display: flex;
+                position: absolute;
+                top: 74px;
+                left: 1rem;
+                right: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                padding: 18px;
+                border-radius: 18px;
+                background: #0f1a31;
+                border: 1px solid var(--line);
+                box-shadow: var(--shadow);
+            }
+
+            .quick-grid,
+            .stats,
+            .skills-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .role-head {
+                flex-direction: column;
+            }
+
+            .hero {
+                padding-top: 52px;
+            }
+
+            .section {
+                padding: 72px 0;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .container {
+                width: min(var(--max), calc(100% - 1.1rem));
+            }
+
+            .hero-card,
+            .card {
+                padding: 20px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a href="#top" class="brand">Mohit<span>.</span></a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#impact">Impact</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="btn btn-secondary" href="#experience">View Experience</a>
+                <a class="btn btn-primary" href="#contact">Get in Touch</a>
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    Menu
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-wrap">
+                <div>
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Open to Opportunities
+                    </div>
+
+                    <h1>
+                        Mohit Kumar Gupta
+                        <span class="soft">— Senior Full Stack Developer</span>
+                    </h1>
+
+                    <p class="hero-role">
+                        Building scalable web applications with MERN Stack, Laravel, and
+                        modern frontend architecture.
+                    </p>
+
+                    <p class="hero-desc">
+                        I work across product engineering, backend systems, frontend
+                        architecture, secure role-based flows, and performance
+                        optimization. My experience spans e-commerce, MLM, restaurant
+                        management, and EdTech platforms.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#experience" class="btn btn-primary">Explore Experience</a>
+                        <a href="#skills" class="btn btn-secondary">Core Skills</a>
+                        <a href="Mohit-Kumar-Gupta-Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <div class="meta-pill">3+ Years Experience</div>
+                        <div class="meta-pill">MERN + Laravel</div>
+                        <div class="meta-pill">Full-time & Remote</div>
+                        <div class="meta-pill">Varanasi, Uttar Pradesh</div>
+                    </div>
+                </div>
+
+                <aside class="hero-card">
+                    <div class="profile-mini">
+                        <div class="avatar">MK</div>
+                        <div>
+                            <h3>Professional Snapshot</h3>
+                            <p>
+                                Focused on scalable applications, real-time business logic,
+                                and maintainable engineering systems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="quick-grid">
+                        <div class="quick-item">
+                            <span>Primary Stack</span>
+                            <strong>React, Next.js, Node.js, Laravel</strong>
+                        </div>
+                        <div class="quick-item">
+                            <span>Backend Focus</span>
+                            <strong>REST APIs, RBAC, Query Optimization</strong>
+                        </div>
+                        <div class="quick-item">
+                            <span>Domains</span>
+                            <strong>E-Commerce, MLM, EdTech, Restaurant Tech</strong>
+                        </div>
+                        <div class="quick-item">
+                            <span>Strength</span>
+                            <strong>Product-level logic with secure architecture</strong>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <div class="eyebrow">About</div>
+                <h2 class="section-title">
+                    A developer focused on building reliable digital products.
+                </h2>
+                <p class="section-desc">
+                    My work combines frontend clarity, backend strength, and
+                    product-minded engineering for systems that need to scale cleanly.
+                </p>
+
+                <div class="about-grid">
+                    <div class="card about-copy">
+                        <p>
+                            I am a Senior Full Stack Developer with 3+ years of experience
+                            building web applications across e-commerce, MLM, restaurant
+                            management, and EdTech domains. My work spans both frontend and
+                            backend systems, with strong hands-on experience in MERN Stack
+                            and Laravel.
+                        </p>
+                        <p>
+                            I enjoy building systems with complex business logic, secure
+                            access control, and efficient data flow. From React dashboards
+                            and Node.js services to Laravel applications and optimized
+                            databases, I aim to create products that are dependable,
+                            performant, and easy to maintain.
+                        </p>
+                        <p>
+                            I am especially interested in engineering roles where product
+                            quality, architecture, and scalability matter as much as
+                            delivery speed.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="num">5+</div>
+                                <div class="label">Production applications delivered</div>
+                            </div>
+                            <div class="stat">
+                                <div class="num">1000+</div>
+                                <div class="label">Users supported across products</div>
+                            </div>
+                            <div class="stat">
+                                <div class="num">40%</div>
+                                <div class="label">Query and processing improvement</div>
+                            </div>
+                            <div class="stat">
+                                <div class="num">6+</div>
+                                <div class="label">User roles managed through RBAC flows</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="eyebrow">Core Expertise</div>
+                <h2 class="section-title">
+                    Strong across product engineering layers.
+                </h2>
+                <p class="section-desc">
+                    From interface development to backend logic, APIs, authentication,
+                    and database tuning.
+                </p>
+
+                <div class="grid skills-grid">
+                    <div class="card skill-card">
+                        <h3>Frontend Engineering</h3>
+                        <div class="tag-list">
+                            <span class="tag">React.js</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Redux Toolkit</span>
+                            <span class="tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <h3>Backend Development</h3>
+                        <div class="tag-list">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <h3>Databases & Security</h3>
+                        <div class="tag-list">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">RBAC</span>
+                            <span class="tag">Query Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <h3>Tools & Workflow</h3>
+                        <div class="tag-list">
+                            <span class="tag">Git / GitHub</span>
+                            <span class="tag">Postman</span>
+                            <span class="tag">MVC Architecture</span>
+                            <span class="tag">Docker Basics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="eyebrow">Experience</div>
+                <h2 class="section-title">Professional journey and featured work.</h2>
+                <p class="section-desc">
+                    A track record of building business-critical systems with practical
+                    engineering outcomes.
+                </p>
+
+                <div class="timeline">
+                    <div class="role-card">
+                        <div class="card">
+                            <div class="role-head">
+                                <div>
+                                    <h3>Software Developer</h3>
+                                    <div class="role-company">Mplussoft Technology</div>
+                                </div>
+                                <div class="role-time">Jun 2023 — Present</div>
+                            </div>
+
+                            <div class="project-list">
+                                <div class="project-item">
+                                    <h4>Sunedge — MLM and E-Commerce Platform</h4>
+                                    <p>
+                                        Architected React.js dashboards for admin, distributor,
+                                        and franchise workflows. Developed Node.js and Express
+                                        backend systems for MLM hierarchy, commission logic, and
+                                        real-time operational flows. Improved MongoDB query
+                                        performance using aggregation pipelines.
+                                    </p>
+                                </div>
+
+                                <div class="project-item">
+                                    <h4>Giridhar Veg — Restaurant Management System</h4>
+                                    <p>
+                                        Worked on Laravel and MySQL-based order and fulfillment
+                                        workflows, including dual-fulfillment logic for courier
+                                        and self-pickup scenarios. Built order lifecycle handling
+                                        for 300+ daily orders, optimized schema/query performance,
+                                        and implemented automated label generation with RBAC.
+                                    </p>
+                                </div>
+
+                                <div class="project-item">
+                                    <h4>Career Path — EdTech Learning Portal</h4>
+                                    <p>
+                                        Developed subscription workflows, payment gateway
+                                        integration, interactive roadmap visualization in React,
+                                        and secure JWT-based authentication for student-facing
+                                        learning flows.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="role-card">
+                        <div class="card">
+                            <div class="role-head">
+                                <div>
+                                    <h3>PHP Laravel Developer (Training → Production)</h3>
+                                    <div class="role-company">Tridhya Tech Pvt. Ltd.</div>
+                                </div>
+                                <div class="role-time">Dec 2022 — May 2023</div>
+                            </div>
+
+                            <div class="project-list">
+                                <div class="project-item">
+                                    <h4>Foundation in Laravel Product Development</h4>
+                                    <p>
+                                        Completed intensive hands-on training and transitioned
+                                        into live Laravel project contribution. Worked with MVC
+                                        architecture, Eloquent ORM, middleware, and REST API
+                                        development while strengthening real-world engineering
+                                        fundamentals.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="eyebrow">Projects</div>
+                <h2 class="section-title">
+                    Selected work across product and platform development.
+                </h2>
+                <p class="section-desc">
+                    A few representative projects that reflect product thinking, backend
+                    depth, clean frontend execution, and business-focused engineering.
+                    Replace these with real screenshots, links, and production details
+                    later.
+                </p>
+
+                <div class="grid projects-grid">
+                    <article class="card project-card">
+                        <div class="project-top">
+                            <div class="project-label">Featured Project</div>
+                            <div class="project-title-row">
+                                <h3>OpsFlow Admin Platform</h3>
+                                <div class="project-status">Live System</div>
+                            </div>
+                            <p class="project-desc">
+                                A role-based operations dashboard for internal teams to manage
+                                users, approvals, analytics, and day-to-day workflow
+                                visibility from a single platform.
+                            </p>
+                        </div>
+
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <div class="project-meta-item">
+                                    <span>Role</span>
+                                    <strong>Full Stack Developer</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Stack</span>
+                                    <strong>React, Node.js, MongoDB</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Focus</span>
+                                    <strong>RBAC, dashboards, APIs</strong>
+                                </div>
+                            </div>
+
+                            <div class="project-points">
+                                <div class="project-point">
+                                    Built a modular admin interface for team operations, user
+                                    control, approval flows, and reporting.
+                                </div>
+                                <div class="project-point">
+                                    Implemented secure role-based access control with dynamic
+                                    permission handling across multiple panels.
+                                </div>
+                                <div class="project-point">
+                                    Optimized dashboard data loading and API response times for
+                                    better day-to-day usage.
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="project-tag">React.js</span>
+                                <span class="project-tag">Express.js</span>
+                                <span class="project-tag">MongoDB</span>
+                                <span class="project-tag">JWT Auth</span>
+                                <span class="project-tag">Dashboard UI</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#" class="project-link primary">View Case Study</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="project-top">
+                            <div class="project-label">Web Application</div>
+                            <div class="project-title-row">
+                                <h3>CommerceCore Storefront</h3>
+                                <div class="project-status">Production Ready</div>
+                            </div>
+                            <p class="project-desc">
+                                A modern commerce application designed for catalog browsing,
+                                checkout workflows, order handling, and operational
+                                management.
+                            </p>
+                        </div>
+
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <div class="project-meta-item">
+                                    <span>Role</span>
+                                    <strong>Frontend + Backend</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Stack</span>
+                                    <strong>Next.js, Laravel, MySQL</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Focus</span>
+                                    <strong>Commerce workflows</strong>
+                                </div>
+                            </div>
+
+                            <div class="project-points">
+                                <div class="project-point">
+                                    Designed product browsing, category navigation, and a clean
+                                    checkout experience for end users.
+                                </div>
+                                <div class="project-point">
+                                    Built backend logic for order lifecycle handling, status
+                                    management, and operational tracking.
+                                </div>
+                                <div class="project-point">
+                                    Structured the app for maintainability with scalable
+                                    database design and reusable UI components.
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">Laravel</span>
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">REST API</span>
+                                <span class="project-tag">Tailwind CSS</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#" class="project-link primary">View Project</a>
+                                <a href="#" class="project-link">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="project-top">
+                            <div class="project-label">Business Platform</div>
+                            <div class="project-title-row">
+                                <h3>LearnSphere Portal</h3>
+                                <div class="project-status">In Use</div>
+                            </div>
+                            <p class="project-desc">
+                                A learning and subscription platform for structured content
+                                delivery, progress tracking, and student-facing account
+                                workflows.
+                            </p>
+                        </div>
+
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <div class="project-meta-item">
+                                    <span>Role</span>
+                                    <strong>Product Engineer</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Stack</span>
+                                    <strong>React, Node.js, MySQL</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Focus</span>
+                                    <strong>Subscriptions, auth, UX</strong>
+                                </div>
+                            </div>
+
+                            <div class="project-points">
+                                <div class="project-point">
+                                    Created user flows for onboarding, authentication,
+                                    subscriptions, and learning progress visibility.
+                                </div>
+                                <div class="project-point">
+                                    Added structured course navigation and dashboard experiences
+                                    to improve content accessibility.
+                                </div>
+                                <div class="project-point">
+                                    Integrated secure account handling and maintainable backend
+                                    APIs for long-term feature growth.
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="project-tag">React.js</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">JWT</span>
+                                <span class="project-tag">Subscription Flow</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#" class="project-link primary">View Case Study</a>
+                                <a href="#" class="project-link">Demo Link</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="project-top">
+                            <div class="project-label">Internal System</div>
+                            <div class="project-title-row">
+                                <h3>FulfillX Management Suite</h3>
+                                <div class="project-status">Enterprise Use</div>
+                            </div>
+                            <p class="project-desc">
+                                An internal management system for tracking operations,
+                                coordinating teams, and improving workflow clarity across
+                                multi-step business processes.
+                            </p>
+                        </div>
+
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <div class="project-meta-item">
+                                    <span>Role</span>
+                                    <strong>Backend-focused Full Stack</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Stack</span>
+                                    <strong>Laravel, Vue, MySQL</strong>
+                                </div>
+                                <div class="project-meta-item">
+                                    <span>Focus</span>
+                                    <strong>Workflow automation</strong>
+                                </div>
+                            </div>
+
+                            <div class="project-points">
+                                <div class="project-point">
+                                    Built business workflows for task movement, record
+                                    management, and status-based operations.
+                                </div>
+                                <div class="project-point">
+                                    Improved maintainability by organizing backend logic cleanly
+                                    and reducing repetitive operations.
+                                </div>
+                                <div class="project-point">
+                                    Enhanced usability with structured dashboard layouts and
+                                    filtered data visibility by role.
+                                </div>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="project-tag">Laravel</span>
+                                <span class="project-tag">Vue.js</span>
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">RBAC</span>
+                                <span class="project-tag">Admin Panel</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#" class="project-link primary">View Project</a>
+                                <a href="#" class="project-link">Private Repo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="projects-note">
+                    Tip: later you can replace these dummy cards with real projects,
+                    screenshots, client-facing summaries, GitHub links, or short case
+                    studies without changing the layout.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="impact">
+            <div class="container">
+                <div class="eyebrow">Impact</div>
+                <h2 class="section-title">Measured through product outcomes.</h2>
+                <p class="section-desc">
+                    Engineering work that improved performance, supported scale, and
+                    strengthened business workflows.
+                </p>
+
+                <div class="grid impact-grid">
+                    <div class="card impact-card">
+                        <div class="big">5+</div>
+                        <p>
+                            Production applications delivered across multiple business
+                            domains.
+                        </p>
+                    </div>
+
+                    <div class="card impact-card">
+                        <div class="big">1000+</div>
+                        <p>
+                            Users supported through dashboards, authentication systems, and
+                            operational platforms.
+                        </p>
+                    </div>
+
+                    <div class="card impact-card">
+                        <div class="big">35–45%</div>
+                        <p>
+                            Reduction in database query time through aggregation and
+                            optimization work.
+                        </p>
+                    </div>
+
+                    <div class="card impact-card">
+                        <div class="big">300+</div>
+                        <p>
+                            Daily restaurant order workflows handled through optimized
+                            application logic.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="container">
+                <div class="eyebrow">Education & Contact</div>
+                <h2 class="section-title">Background and professional reach.</h2>
+                <p class="section-desc">
+                    Open to meaningful engineering opportunities, product teams, and
+                    full stack roles.
+                </p>
+
+                <div class="two-col">
+                    <div class="card">
+                        <h3 style="margin-bottom: 18px; font-size: 1.18rem">Education</h3>
+                        <div class="edu-list">
+                            <div class="edu-item">
+                                <h4>B.Tech Computer Science</h4>
+                                <p>United Group of Institutions</p>
+                                <p>2018 — 2022 · 65.6%</p>
+                            </div>
+
+                            <div class="edu-item">
+                                <h4>Intermediate</h4>
+                                <p>St. Atulanand Academy</p>
+                                <p>2016 — 2018 · 64.6%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="contact">
+                        <h3 style="margin-bottom: 18px; font-size: 1.18rem">Contact</h3>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <h4>Email</h4>
+                                <a href="mailto:mohitg8400244394@gmail.com">mohitg8400244394@gmail.com</a>
+                            </div>
+
+                            <div class="contact-item">
+                                <h4>Phone</h4>
+                                <a href="tel:+918400244394">+91 8400244394</a>
+                            </div>
+
+                            <div class="contact-item">
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/mohit-gupta" target="_blank" rel="noopener noreferrer">
+                                    linkedin.com/in/mohit-gupta
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <h4>Location</h4>
+                                <p>Varanasi, Uttar Pradesh</p>
+                            </div>
+                        </div>
+
+                        <p class="contact-cta">
+                            Interested in backend-heavy product work, full stack development
+                            roles, and teams building scalable digital systems.
+                        </p>
+
+                        <div class="hero-actions" style="margin-top: 22px; margin-bottom: 0">
+                            <a href="mailto:mohitg8400244394@gmail.com" class="btn btn-primary">Send Email</a>
+                            <a href="Mohit-Kumar-Gupta-Resume.pdf" class="btn btn-secondary" download>Download
+                                Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            © <span id="year"></span> Mohit Kumar Gupta · Senior Full Stack
+            Developer
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+        const year = document.getElementById("year");
+
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener("click", () => {
+                navLinks.classList.toggle("open");
+            });
+
+            navLinks.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("open");
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
