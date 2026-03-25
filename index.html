@@ -244,8 +244,13 @@
             margin-bottom: 16px;
         }
 
-        .hero h1 .soft {
-            color: #a8c7f5;
+        .hero .soft {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(2.6rem, 5vw, 5rem);
+            line-height: 0.90;
+            letter-spacing: -0.05em;
+            margin-bottom: 16px;
+            color: #a8c7f5 !important;
             font-weight: 700;
         }
 
@@ -312,15 +317,16 @@
 
         .profile-mini {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 16px;
             margin-bottom: 26px;
         }
 
         .avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
+            /* width: 64px;
+            height: 64px; */
+            border-radius: 50%;
+            padding: 10px;
             background: linear-gradient(135deg, var(--accent), #1d4ed8);
             display: grid;
             place-items: center;
@@ -943,10 +949,8 @@
                         Open to Opportunities
                     </div>
 
-                    <h1>
-                        Mohit Kumar Gupta
-                        <span class="soft">— Senior Full Stack Developer</span>
-                    </h1>
+                    <h1>Mohit Kumar Gupta</h1>
+                    <h2 class="soft">Full Stack Developer</h2>
 
                     <p class="hero-role">
                         Building scalable web applications with MERN Stack, Laravel, and
@@ -989,7 +993,7 @@
                     <div class="quick-grid">
                         <div class="quick-item">
                             <span>Primary Stack</span>
-                            <strong>React, Next.js, Node.js, Laravel</strong>
+                            <strong>Node.js, React, Express.js, PHP, Laravel</strong>
                         </div>
                         <div class="quick-item">
                             <span>Backend Focus</span>
@@ -997,7 +1001,7 @@
                         </div>
                         <div class="quick-item">
                             <span>Domains</span>
-                            <strong>E-Commerce, MLM, EdTech, Restaurant Tech</strong>
+                            <strong>E-Commerce, MLM, EdTech, Restaurant</strong>
                         </div>
                         <div class="quick-item">
                             <span>Strength</span>
@@ -1082,10 +1086,11 @@
                         <h3>Frontend Engineering</h3>
                         <div class="tag-list">
                             <span class="tag">React.js</span>
-                            <span class="tag">Next.js</span>
                             <span class="tag">TypeScript</span>
+                            <span class="tag">Jquery</span>
                             <span class="tag">Redux Toolkit</span>
                             <span class="tag">Tailwind CSS</span>
+                            <span class="tag">Bootstrap</span>
                         </div>
                     </div>
 
@@ -1104,10 +1109,11 @@
                         <h3>Databases & Security</h3>
                         <div class="tag-list">
                             <span class="tag">MySQL</span>
+                            <span class="tag">PgSQL</span>
                             <span class="tag">MongoDB</span>
                             <span class="tag">JWT</span>
-                            <span class="tag">RBAC</span>
                             <span class="tag">Query Optimization</span>
+                            <span class="tag">RBAC</span>
                         </div>
                     </div>
 
@@ -1118,6 +1124,7 @@
                             <span class="tag">Postman</span>
                             <span class="tag">MVC Architecture</span>
                             <span class="tag">Docker Basics</span>
+                            <span class="tag">AWS (S3 and SES)</span>
                         </div>
                     </div>
                 </div>
